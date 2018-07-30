@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_number">
+    <sys_number action="INSERT_OR_UPDATE">
+        <category display_value="" name="x_ouhs2_scc_second_secure_data_view_log">x_ouhs2_scc_second_secure_data_view_log</category>
+        <maximum_digits>7</maximum_digits>
+        <number>10000</number>
+        <prefix>SDL</prefix>
+        <sys_class_name>sys_number</sys_class_name>
+        <sys_created_by>JGIBSON2</sys_created_by>
+        <sys_created_on>2018-06-14 15:04:42</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>4a0db7374fa6d700196cd0af0310c79d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SDL</sys_name>
+        <sys_package display_value="SCC Second Opinion" source="x_ouhs2_scc_second">c1ba20c64f4a5f007b92d49f0310c78b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SCC Second Opinion">c1ba20c64f4a5f007b92d49f0310c78b</sys_scope>
+        <sys_update_name>sys_number_4a0db7374fa6d700196cd0af0310c79d</sys_update_name>
+        <sys_updated_by>JGIBSON2</sys_updated_by>
+        <sys_updated_on>2018-06-14 15:04:42</sys_updated_on>
+    </sys_number>
+</record_update>

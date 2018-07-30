@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="SCC Self Referral">15ba204e4fca5f007b92d49f0310c77f</application>
+        <assessment/>
+        <content_page/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>SCC Second Opinion</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_ouhs2_scc_second_opinion</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_ouhs2_scc_second.user</roles>
+        <survey/>
+        <survey_overwrite>true</survey_overwrite>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>JGIBSON2</sys_created_by>
+        <sys_created_on>2018-06-27 18:36:12</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>571a6fcc4f87d3407b92d49f0310c753</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>All Tickets</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="SCC Second Opinion" source="x_ouhs2_scc_second">c1ba20c64f4a5f007b92d49f0310c78b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SCC Second Opinion">c1ba20c64f4a5f007b92d49f0310c78b</sys_scope>
+        <sys_update_name>sys_app_module_571a6fcc4f87d3407b92d49f0310c753</sys_update_name>
+        <sys_updated_by>JGIBSON2</sys_updated_by>
+        <sys_updated_on>2018-06-29 20:08:31</sys_updated_on>
+        <timeline_page/>
+        <title>All Tickets</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

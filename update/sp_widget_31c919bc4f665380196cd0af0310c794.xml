@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function ($scope, spUtil) {
+	var c = this;
+	
+	//initalize and set variables to control user actions
+	//div to hold specific inputs
+	$scope.holdingdiv = false;
+	//function controlling holdingdiv show or no show
+  $scope.showHoldingDiv = function () { 
+		if($scope.is_patient == 'yes'){
+			$scope.holdingdiv = false;
+		}else if($scope.is_patient == 'no'){
+			$scope.holdingdiv = true;
+		}
+  }
+	
+	//function to send user back to previous page according to browser
+	c.prevPage = function(){
+		setTimeout(function(){history.go(-1);},1);
+	}
+	
+	//function submitting data inputs to server
+	c.validSubmit = function(){
+		c.server.update();
+		alert('Thank you, Your request has been submitted.')
+		//setTimeout(function(){window.location.reload();},10);
+		setTimeout(function(){history.go(-1);},10);
+	}
+	
+	//check input values
+	c.checkInputs = function(){
+		
+		$scope.complete = false;
+		//create an array to hold errors when requirements are not met
+		//this defines array empty and clears everytime function is called
+		$scope.errors = [];
+		$scope.myErrorList = false;
+		$scope.focus=false;
+		$scope.requiredFieldis_patient = false;
+		$scope.requiredFieldpatient_first_name = false;
+		$scope.requiredFieldpatient_last_name = false;
+		$scope.requiredFieldstate = false;
+		$scope.requiredFieldzipcode = false;
+		$scope.requiredFieldphone = false;
+		$scope.requiredFielddate_of_birth = false;
+		$scope.requiredFieldgender_select = false;
+		$scope.requiredFieldprimary_diagnosis = false;
+		$scope.requiredFieldrelationship_to_patient = false;
+		$scope.requiredFieldrequester_first_name = false;
+		$scope.requiredFieldrequester_last_name = false;
+		$scope.requiredFieldrequester_email = false;
+		$scope.requiredFieldrequester_phone = false;
+		
+		if(typeof($scope.is_patient) == 'undefined'){
+			$scope.errors.push('Are you the patient?');
+		}
+		if(typeof($scope.patient_first_name) == 'undefined' || $scope.patient_first_name == ''){
+			$scope.errors.push('Patient First Name');
+		}
+		if(typeof($scope.patient_last_name) == 'undefined' || $scope.patient_last_name == ''){
+			$scope.errors.push('Patient Last Name');
+		}
+		if(typeof($scope.state) == 'undefined' || $scope.state == ''){
+			$scope.errors.push('State');
+		}
+		if(typeof($scope.zipcode) == 'undefined' || $scope.zipcode == ''){
+			$scope.errors.push('Zipcode');
+		}
+		if(typeof($scope.phone) == 'undefined' || $scope.phone == ''){
+			$scope.errors.push('Phone');
+		}
+		if(typeof($scope.date_of_birth) == 'undefined' || $scope.date_of_birth == ''){
+			$scope.errors.push('Date of Birth');
+		}
+		if(typeof($scope.gender_select) == 'undefined' || $scope.gender_select == ''){
+			$scope.errors.push('Gender Select');
+		}
+		if(typeof($scope.primary_diagnosis) == 'undefined' || $scope.primary_diagnosis == ''){
+			$scope.errors.push('Primary Diagnosis');
+		}
+		//-----
+		if($scope.is_patient == 'no'){
+			if(typeof($scope.relationship_to_patient) == 'undefined' || $scope.relationship_to_patient == ''){
+				$scope.errors.push('Relationship to Patient');
+			}	
+			if(typeof($scope.requester_first_name) == 'undefined' || $scope.requester_first_name == ''){
+				$scope.errors.push('Requester  First Name');
+			}
+			if(typeof($scope.requester_last_name) == 'undefined' || $scope.requester_last_name == ''){
+				$scope.errors.push('Requester Last Name');
+			}
+			if(typeof($scope.requester_email) == 'undefined' || $scope.requester_email == ''){
+				$scope.errors.push('Requester Email');
+			}
+			if(typeof($scope.requester_phone) == 'undefined' || $scope.requester_phone == ''){
+				$scope.errors.push('Requester Phone');
+			}
+		}
+		//-----
+		
+		
+		
+		
+		angular.forEach($scope.errors, function(value, key) {
+			//this.push(key + ': ' + value);
+			
+			if(value == 'Are you the patient?'){
+				$scope.requiredFieldis_patient = true;
+			}
+			if(value == 'Patient First Name'){
+				$scope.requiredFieldpatient_first_name = true;
+			}
+			if(value == 'Patient Last Name'){
+				$scope.requiredFieldpatient_last_name = true;
+			}
+			if(value == 'State'){
+				$scope.requiredFieldstate = true;
+			}
+			if(value == 'Zipcode'){
+				$scope.requiredFieldzipcode = true;
+			}
+			if(value == 'Phone'){
+				$scope.requiredFieldphone = true;
+			}
+			if(value == 'Date of Birth'){
+				$scope.requiredFielddate_of_birth = true;
+			}
+			if(value == 'Gender Select'){
+				$scope.requiredFieldgender_select = true;
+			}
+			if(value == 'Primary Diagnosis'){
+				$scope.requiredFieldprimary_diagnosis = true;
+			}
+			if(value == 'Relationship to Patient'){
+				$scope.requiredFieldrelationship_to_patient = true;
+			}
+			if(value == 'Requester First Name'){
+				$scope.requiredFieldrequester_first_name = true;
+			}
+			if(value == 'Requester Last Name'){
+				$scope.requiredFieldrequester_last_name = true;
+			}
+			if(value == 'Requester Email'){
+				$scope.requiredFieldrequester_email = true;
+			}
+			if(value == 'Requester Phone'){
+				$scope.requiredFieldrequester_phone = true;
+			}
+		});
+		
+		if($scope.errors != null){
+			$scope.focus = true;
+			$scope.myErrorList = true;
+		}
+		
+		if($scope.errors == ''){
+			//alert('array is empty');
+			c.sendReferral();
+		}
+		/*else{
+			$scope.items.splice(index, 1);
+		}*/
+
+		
+	}
+	
+	//function collecting all inputs from form
+	c.sendReferral = function() {
+		c.data.is_patient = $scope.is_patient;
+		c.data.relationship_to_patient = $scope.relationship_to_patient;
+		c.data.requester_first_name = $scope.requester_first_name;
+		c.data.requester_last_name = $scope.requester_last_name;
+		c.data.requester_email = $scope.requester_email;
+		c.data.requester_phone = $scope.requester_phone;
+		c.data.patient_first_name = $scope.patient_first_name;
+		c.data.patient_last_name = $scope.patient_last_name;
+		c.data.state = $scope.state;
+		c.data.zipcode = $scope.zipcode;
+		c.data.phone = $scope.phone;
+		c.data.email = $scope.email;
+		c.data.date_of_birth = $scope.date_of_birth;
+		c.data.gender_select = $scope.gender_select;
+		c.data.reason = $scope.reason;
+		c.data.primary_diagnosis = $scope.primary_diagnosis;
+		
+		c.validSubmit();//if requirments are met send to server
+
+	}
+
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.control-label{
+ 	margin-top:25px; 
+}
+
+#primary_diagnosis{
+  margin-bottom:25px; 
+}
+.required_field_input{
+ 	color:red; 
+}
+.lable-title{
+  font-size:21px;
+  font-weight:bold;
+  clear:both;
+ 	padding-top:25px;
+  margin-bottom:-25px;
+}
+#error_box{
+ 	padding:15px 5px 15px 15px; 
+  color:red;
+  font-size:14px;
+}
+	#error_box span{
+  	font-size:18px;
+  }
+.error_list_group{
+	margin-left:-25px;
+}
+#sc_referral_item{
+ 	margin-top:-10px; 
+}
+.submitbtn{
+  margin-bottom:25px; 
+}
+.header_bar{
+ 	border-bottom: 2px solid #e7a323; 
+}
+.backicon{
+ 	float: right; 
+}
+.focusClass {
+  border:2px solid #dddfe1 ;
+  background-color: #f4f5f8;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>stephenson-cancer-center-self-referral</id>
+        <internal>false</internal>
+        <link/>
+        <name>Stephenson Cancer Center Self Referral</name>
+        <option_schema/>
+        <public>true</public>
+        <roles>admin</roles>
+        <script><![CDATA[(function() {
+	//only if there where data inputs from user
+	if(input){
+		//set data base variable
+		var passdata = new GlideRecord('x_ouhs2_scc_second_opinion');
+		//initiate database variable
+    passdata.initialize();
+		//set inputs to database variables
+    passdata.setValue('patient', input.is_patient);
+		passdata.setValue('patient_relationship', input.relationship_to_patient);
+		passdata.setValue('req_name', input.requester_first_name);
+    passdata.setValue('req_last_name', input.requester_last_name);
+		passdata.setValue('req_phone', input.requester_phone);
+		passdata.setValue('req_email', input.requester_email);
+		passdata.setValue('patient_name', input.patient_first_name);
+    passdata.setValue('patient_last_name', input.patient_last_name);
+		passdata.setValue('inc_state', input.state);
+		passdata.setValue('zip_code', input.zipcode);
+		passdata.setValue('phone_number', input.phone);
+		passdata.setValue('email', input.email);
+		passdata.setValue('birthday', input.date_of_birth);
+		passdata.setValue('gender', input.gender_select);
+		passdata.setValue('request_type', input.reason);
+		passdata.setValue('diagnosis', input.primary_diagnosis);
+		//run query
+    passdata.insert();
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>ZREECE</sys_created_by>
+        <sys_created_on>2018-06-04 19:29:39</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>31c919bc4f665380196cd0af0310c794</sys_id>
+        <sys_mod_count>472</sys_mod_count>
+        <sys_name>Stephenson Cancer Center Self Referral</sys_name>
+        <sys_package display_value="SCC Second Opinion" source="x_ouhs2_scc_second">c1ba20c64f4a5f007b92d49f0310c78b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SCC Second Opinion">c1ba20c64f4a5f007b92d49f0310c78b</sys_scope>
+        <sys_update_name>sp_widget_31c919bc4f665380196cd0af0310c794</sys_update_name>
+        <sys_updated_by>ZREECE</sys_updated_by>
+        <sys_updated_on>2018-07-25 18:47:30</sys_updated_on>
+        <template><![CDATA[<div class="header_bar">
+  <img src="scc_site_logo.png" width="416" height="103"/>
+    <span class="backicon">
+    	<img src="scc_back_icon.png" width="416" height="103" ng-click="c.prevPage()" />
+  	</span>
+</div>
+
+<div id="error_box" ng-show="myErrorList" ng-focus="focus" ng-class="{focusClass: focus}"><!---->
+ <span>The following input fields are required.</span>
+ <ul class="error_list_group">
+  <li ng-repeat="error in errors" class="error_list">
+    {{ error }}
+  </li>
+ </ul>
+</div>
+
+
+<!-- are you the patient-->
+<div id="sc_referral_item" class="form-group">
+
+  <div class="col-md-12">
+  <label class="control-label" for="is patient">*Are you the patient?</label><span ng-show="requiredFieldis_patient" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+  <div class="radio">
+    <label for="is patient-0">
+      <input ng-model="is_patient" ng-click="showHoldingDiv()" id="is_patient-0" value="yes" checked="checked" type="radio">
+      Yes
+    </label>
+	</div>
+  <div class="radio">
+    <label for="is patient-1">
+      <input ng-model="is_patient" ng-click="showHoldingDiv()" id="is_patient-1" value="no" type="radio">
+      No
+    </label>
+	</div>
+  </div>
+</div>
+
+<div ng-show="holdingdiv">
+  
+  <div class="lable-title">
+    Requester's Information <hr />
+  </div>
+  
+  <!-- relationship to patient-->
+  <div class="form-group">
+    <div class="col-md-12">
+    <label class="control-label" for="relationship_to_patient">*What is your relationship to the patient?</label><span ng-show="requiredFieldrelationship_to_patient" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+    <select id="relationship_to_patient" ng-model="relationship_to_patient" class="form-control">
+      <option value="Parent">Parent</option>
+      <option value="Spouse">Spouse</option>
+      <option value="Child">Child</option>
+      <option value="Sibling">Sibling</option>
+      <option value="Friend">Friend</option>
+      <option value="Caregiver">Caregiver</option>
+      <option value="Other_relative">Other relative</option>
+    </select>
+    </div>
+  </div>
+  
+  <!-- requester first name-->
+  <div class="form-group">
+    <div class="col-md-6">
+    <label class="control-label" for="requester_first_name">*Requester's first name</label><span ng-show="requiredFieldrequester_first_name" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+    <input id="requester_first_name" ng-model="requester_first_name" placeholder="Enter first name" class="form-control input-md" type="text">
+    </div>
+  </div>
+  
+  <!-- requester last name-->
+  <div class="form-group">
+    <div class="col-md-6">
+    <label class="control-label" for="requester_last_name">*Requester's last name</label><span ng-show="requiredFieldrequester_last_name" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+    <input id="requester_last_name" ng-model="requester_last_name" placeholder="Enter last name" class="form-control input-md" type="text">
+    </div>
+  </div>
+  
+  <!-- requester email-->
+  <div class="form-group">
+    <div class="col-md-6">
+    <label class="control-label" for="requester_email">*Requester's Email Address</label><span ng-show="requiredFieldrequester_email" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+    <input id="requester_email" ng-model="requester_email" placeholder="Enter Email Address" class="form-control input-md" type="text">
+    </div>
+  </div>
+  
+  <!-- requester phone number-->
+  <div class="form-group">
+    <div class="col-md-6">
+    <label class="control-label" for="requester_phone">*Requester's Phone Number</label><span ng-show="requiredFieldrequester_phone" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+    <input id="requester_phone" ng-model="requester_phone" placeholder="Enter Phone Number" class="form-control input-md" type="text">
+    </div>
+  </div>
+  
+</div>
+
+<div class="lable-title">
+    Patient Information <hr />
+</div>
+
+<!-- patient first name-->
+<div class="form-group">
+  <div class="col-md-6">
+  <label class="control-label" for="patient_first_name">*Patient's first name</label><span ng-show="requiredFieldpatient_first_name" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+  <input id="patient_first_name" ng-model="patient_first_name" placeholder="Enter first name" class="form-control input-md" type="text">
+  </div>
+</div>
+
+<!-- patient last name-->
+<div class="form-group">
+  <div class="col-md-6">
+  <label class="control-label" for="patient_last_name">*Patient's last name</label><span ng-show="requiredFieldpatient_last_name" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+  <input id="patient_last_name" ng-model="patient_last_name" placeholder="Enter last name" class="form-control input-md" type="text">
+  </div>
+</div>
+
+<!-- state-->
+<div class="form-group">
+  <div class="col-md-6">
+  <label class="control-label" for="state">*State</label><span ng-show="requiredFieldstate" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+  <!--<input id="state" ng-model="state" placeholder="Enter state" class="form-control input-md" type="text">-->
+    <select id="state" ng-model="state" class="form-control">
+      <option value="AL">Alabama</option>
+      <option value="AK">Alaska</option>
+      <option value="AZ">Arizona</option>
+      <option value="AR">Arkansas</option>
+      <option value="CA">California</option>
+      <option value="CO">Colorado</option>
+      <option value="CT">Connecticut</option>
+      <option value="DE">Delaware</option>
+      <option value="DC">District Of Columbia</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="HI">Hawaii</option>
+      <option value="ID">Idaho</option>
+      <option value="IL">Illinois</option>
+      <option value="IN">Indiana</option>
+      <option value="IA">Iowa</option>
+      <option value="KS">Kansas</option>
+      <option value="KY">Kentucky</option>
+      <option value="LA">Louisiana</option>
+      <option value="ME">Maine</option>
+      <option value="MD">Maryland</option>
+      <option value="MA">Massachusetts</option>
+      <option value="MI">Michigan</option>
+      <option value="MN">Minnesota</option>
+      <option value="MS">Mississippi</option>
+      <option value="MO">Missouri</option>
+      <option value="MT">Montana</option>
+      <option value="NE">Nebraska</option>
+      <option value="NV">Nevada</option>
+      <option value="NH">New Hampshire</option>
+      <option value="NJ">New Jersey</option>
+      <option value="NM">New Mexico</option>
+      <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="ND">North Dakota</option>
+      <option value="OH">Ohio</option>
+      <option value="OK">Oklahoma</option>
+      <option value="OR">Oregon</option>
+      <option value="PA">Pennsylvania</option>
+      <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="SD">South Dakota</option>
+      <option value="TN">Tennessee</option>
+      <option value="TX">Texas</option>
+      <option value="UT">Utah</option>
+      <option value="VT">Vermont</option>
+      <option value="VA">Virginia</option>
+      <option value="WA">Washington</option>
+      <option value="WV">West Virginia</option>
+      <option value="WI">Wisconsin</option>
+      <option value="WY">Wyoming</option>
+    </select>			
+  </div>
+</div>
+
+<!-- zip code-->
+<div class="form-group">
+  <div class="col-md-6">
+  <label class="control-label" for="zipcode">*Zip code</label><span ng-show="requiredFieldzipcode" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+  <input id="zipcode" ng-model="zipcode" placeholder="Enter zip code" class="form-control input-md" type="text">
+  </div>
+</div>
+
+<!-- phone-->
+<div class="form-group">
+  <div class="col-md-6">
+  <label class="control-label" for="phone">*Phone</label><span ng-show="requiredFieldphone" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+  <input id="phone" ng-model="phone" placeholder="Enter phone" class="form-control input-md" required="" type="text">
+  </div>
+</div>
+
+<!-- email-->
+<div class="form-group">
+  <div class="col-md-6">
+  <label class="control-label" for="email">Email</label>
+  <input id="email" ng-model="email" placeholder="Enter email" class="form-control input-md" type="text">
+  </div>
+</div>
+
+<!-- date of birth-->
+<div class="form-group">
+  <div class="col-md-6">
+  <label class="control-label" for="date_of_birth">*Date of Birth</label><span ng-show="requiredFielddate_of_birth" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span> 
+  <input id="date_of_birth" ng-model="date_of_birth" placeholder="Enter date of birth" class="form-control input-md" type="text">
+  </div>
+</div>
+
+<!-- gender-->
+<div class="form-group">
+  <div class="col-md-6">
+  <label class="control-label" for="gender_select">*Gender</label><span ng-show="requiredFieldgender_select" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+    <select id="gender_select" ng-model="gender_select" class="form-control">
+      <option value="--None--">--None--</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Perfer not to answer">Prefer not to answer</option>
+    </select>
+  </div>
+</div>
+
+<!-- reason selection-->
+<div class="form-group">
+  <div class="col-md-12">
+  <label class="control-label" for="reason">Is this a new diagnosis, request for second opinion, or transfer of care?</label>
+    <select id="reason" ng-model="reason" class="form-control">
+      <option value="--None--">--None--</option>
+      <option value="New Diagnosis">New diagnosis</option>
+      <option value="Request for second opinion">Request for second opinion</option>
+      <option value="Transfer of care">Transfer of care</option>
+    </select>
+  </div>
+</div>
+
+<!-- reason-->
+<div class="form-group">
+  <div class="col-md-12">
+  <label class="control-label" for="primary_diagnosis">*What is your primary diagnosis?</label><span ng-show="requiredFieldprimary_diagnosis" class="required_field_input">&nbsp;&nbsp;&nbsp;&nbsp;* Required</span>
+    <textarea class="form-control" id="primary_diagnosis" ng-model="primary_diagnosis"></textarea>
+  </div>
+</div>
+
+
+
+<!-- submit button-->
+<button id="thesubmitbtn" class="btn btn-primary btn-block submitbtn" ng-click="c.checkInputs()">
+  ${Submit}
+</button>
+
+
+
+
+
+
+]]></template>
+    </sp_widget>
+</record_update>

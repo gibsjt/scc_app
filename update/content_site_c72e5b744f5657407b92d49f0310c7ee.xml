@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="content_site">
+    <content_site action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <catalog_cartless>false</catalog_cartless>
+        <catalog_headless>true</catalog_headless>
+        <default_layout/>
+        <default_page/>
+        <default_theme/>
+        <description/>
+        <gauge_page/>
+        <login_page/>
+        <name>Stephenson Cancer Center</name>
+        <search_page/>
+        <sys_class_name>content_site</sys_class_name>
+        <sys_created_by>JGIBSON2</sys_created_by>
+        <sys_created_on>2018-05-23 18:52:39</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c72e5b744f5657407b92d49f0310c7ee</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Stephenson Cancer Center</sys_name>
+        <sys_package display_value="SCC Second Opinion" source="x_ouhs2_scc_second">c1ba20c64f4a5f007b92d49f0310c78b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SCC Second Opinion">c1ba20c64f4a5f007b92d49f0310c78b</sys_scope>
+        <sys_update_name>content_site_c72e5b744f5657407b92d49f0310c7ee</sys_update_name>
+        <sys_updated_by>Nathan.Mobley</sys_updated_by>
+        <sys_updated_on>2018-05-31 14:29:12</sys_updated_on>
+        <title/>
+        <url_suffix>SCC</url_suffix>
+    </content_site>
+    <sys_translated_text action="delete_multiple" query="documentkey=c72e5b744f5657407b92d49f0310c7ee"/>
+</record_update>

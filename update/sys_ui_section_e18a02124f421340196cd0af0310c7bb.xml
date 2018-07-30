@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_section caption="Notes" section_id="e18a02124f421340196cd0af0310c7bb" sys_domain="global" table="x_ouhs2_scc_second_opinion" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>addl_comments</element>
+            <position>0</position>
+            <sys_created_by>Monica.Koppelmann</sys_created_by>
+            <sys_created_on>2018-06-01 15:50:59</sys_created_on>
+            <sys_id>55fa0d374f9a9f40196cd0af0310c77c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Notes" display_value="Notes" name="x_ouhs2_scc_second_opinion" sys_domain="global" view="Default view">e18a02124f421340196cd0af0310c7bb</sys_ui_section>
+            <sys_updated_by>Monica.Koppelmann</sys_updated_by>
+            <sys_updated_on>2018-06-01 15:50:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Notes</caption>
+            <header>false</header>
+            <name>x_ouhs2_scc_second_opinion</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>Monica.Koppelmann</sys_created_by>
+            <sys_created_on>2018-05-15 18:22:07</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>e18a02124f421340196cd0af0310c7bb</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>Notes</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="SCC Second Opinion" source="x_ouhs2_scc_second">c1ba20c64f4a5f007b92d49f0310c78b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SCC Second Opinion">c1ba20c64f4a5f007b92d49f0310c78b</sys_scope>
+            <sys_update_name>sys_ui_section_e18a02124f421340196cd0af0310c7bb</sys_update_name>
+            <sys_updated_by>Monica.Koppelmann</sys_updated_by>
+            <sys_updated_on>2018-05-15 18:23:25</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

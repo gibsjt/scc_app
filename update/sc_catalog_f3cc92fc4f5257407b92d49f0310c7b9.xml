@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sc_catalog">
+    <sc_catalog action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <background_color>white</background_color>
+        <description/>
+        <desktop_continue_shopping/>
+        <desktop_home_page/>
+        <desktop_image/>
+        <editors/>
+        <enable_wish_list>false</enable_wish_list>
+        <manager/>
+        <sys_class_name>sc_catalog</sys_class_name>
+        <sys_created_by>JGIBSON2</sys_created_by>
+        <sys_created_on>2018-05-23 14:07:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f3cc92fc4f5257407b92d49f0310c7b9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Stephenson Cancer Center</sys_name>
+        <sys_package display_value="SCC Second Opinion" source="x_ouhs2_scc_second">c1ba20c64f4a5f007b92d49f0310c78b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SCC Second Opinion">c1ba20c64f4a5f007b92d49f0310c78b</sys_scope>
+        <sys_update_name>sc_catalog_f3cc92fc4f5257407b92d49f0310c7b9</sys_update_name>
+        <sys_updated_by>Nathan.Mobley</sys_updated_by>
+        <sys_updated_on>2018-05-31 14:24:24</sys_updated_on>
+        <title>Stephenson Cancer Center</title>
+    </sc_catalog>
+</record_update>

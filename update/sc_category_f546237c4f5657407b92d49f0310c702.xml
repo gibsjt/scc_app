@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sc_category">
+    <sc_category action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <entitlement_script/>
+        <header_icon/>
+        <homepage_image/>
+        <homepage_renderer/>
+        <icon/>
+        <image/>
+        <location/>
+        <mobile_hide_description>false</mobile_hide_description>
+        <mobile_picture/>
+        <mobile_subcategory_render_type>list</mobile_subcategory_render_type>
+        <module/>
+        <order>0</order>
+        <parent/>
+        <roles>public</roles>
+        <sc_catalog display_value="Stephenson Cancer Center">f3cc92fc4f5257407b92d49f0310c7b9</sc_catalog>
+        <show_in_cms>false</show_in_cms>
+        <sys_class_name>sc_category</sys_class_name>
+        <sys_created_by>JGIBSON2</sys_created_by>
+        <sys_created_on>2018-05-23 19:28:14</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f546237c4f5657407b92d49f0310c702</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Stephenson Cancer Center</sys_name>
+        <sys_package display_value="SCC Second Opinion" source="x_ouhs2_scc_second">c1ba20c64f4a5f007b92d49f0310c78b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SCC Second Opinion">c1ba20c64f4a5f007b92d49f0310c78b</sys_scope>
+        <sys_update_name>sc_category_f546237c4f5657407b92d49f0310c702</sys_update_name>
+        <sys_updated_by>Nathan.Mobley</sys_updated_by>
+        <sys_updated_on>2018-05-31 14:24:52</sys_updated_on>
+        <title>Stephenson Cancer Center</title>
+        <u_services_available>false</u_services_available>
+    </sc_category>
+</record_update>

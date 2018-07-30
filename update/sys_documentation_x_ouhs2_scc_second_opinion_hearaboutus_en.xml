@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="hearaboutus" label="How did you hear about the Stephenson Cancer Center?" language="en" table="x_ouhs2_scc_second_opinion">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>hearaboutus</element>
+            <help/>
+            <hint/>
+            <label>How did you hear about the Stephenson Cancer Center?</label>
+            <language>en</language>
+            <name>x_ouhs2_scc_second_opinion</name>
+            <plural>How did you hear about the Stephenson Cancer Center?s</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Monica.Koppelmann</sys_created_by>
+            <sys_created_on>2018-06-01 15:13:26</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>135205bf4f5a9f40196cd0af0310c791</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>How did you hear about the Stephenson Cancer Center?</sys_name>
+            <sys_package display_value="SCC Second Opinion" source="x_ouhs2_scc_second">c1ba20c64f4a5f007b92d49f0310c78b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SCC Second Opinion">c1ba20c64f4a5f007b92d49f0310c78b</sys_scope>
+            <sys_update_name>sys_documentation_x_ouhs2_scc_second_opinion_hearaboutus_en</sys_update_name>
+            <sys_updated_by>Monica.Koppelmann</sys_updated_by>
+            <sys_updated_on>2018-06-01 15:13:26</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

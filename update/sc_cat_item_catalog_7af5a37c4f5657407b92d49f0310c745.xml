@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Stephenson Cancer Center Self Referral">036cd49c4f96d3407b92d49f0310c7d2</sc_cat_item>
+        <sc_catalog display_value="Stephenson Cancer Center">f3cc92fc4f5257407b92d49f0310c7b9</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>JGIBSON2</sys_created_by>
+        <sys_created_on>2018-05-23 19:26:31</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>7af5a37c4f5657407b92d49f0310c745</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Stevenson Cancer Center.Appointment Request</sys_name>
+        <sys_package display_value="SCC Second Opinion" source="x_ouhs2_scc_second">c1ba20c64f4a5f007b92d49f0310c78b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SCC Second Opinion">c1ba20c64f4a5f007b92d49f0310c78b</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_7af5a37c4f5657407b92d49f0310c745</sys_update_name>
+        <sys_updated_by>JGIBSON2</sys_updated_by>
+        <sys_updated_on>2018-05-23 19:26:31</sys_updated_on>
+    </sc_cat_item_catalog>
+</record_update>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="zip_code" label="Zip code" language="en" table="x_ouhs2_scc_second_opinion">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>zip_code</element>
+            <help/>
+            <hint/>
+            <label>Zip code</label>
+            <language>en</language>
+            <name>x_ouhs2_scc_second_opinion</name>
+            <plural>Zip codes</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Monica.Koppelmann</sys_created_by>
+            <sys_created_on>2018-05-14 20:27:31</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>f4ad154a4f46df00196cd0af0310c746</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Zip code</sys_name>
+            <sys_package display_value="SCC Second Opinion" source="x_ouhs2_scc_second">c1ba20c64f4a5f007b92d49f0310c78b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SCC Second Opinion">c1ba20c64f4a5f007b92d49f0310c78b</sys_scope>
+            <sys_update_name>sys_documentation_x_ouhs2_scc_second_opinion_zip_code_en</sys_update_name>
+            <sys_updated_by>Monica.Koppelmann</sys_updated_by>
+            <sys_updated_on>2018-05-14 20:27:31</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

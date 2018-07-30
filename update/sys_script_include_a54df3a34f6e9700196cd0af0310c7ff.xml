@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>false</active>
+        <api_name>x_ouhs2_scc_second.log_phi_data2</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>log_phi_data2</name>
+        <script><![CDATA[var log_phi_data2 = Class.create();
+log_phi_data2.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+logdata: function(){
+	
+//var name = this.getParameter('sysparm_name');	
+var number1 = this.getParameter('sysparm_number');
+
+var nw = new GlideRecord('x_ouhs2_scc_second_secure_data_view_log');
+nw.initialize();
+nw.record_number = number1;
+nw.insert();
+},
+    type: 'log_phi_data2'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>JGIBSON2</sys_created_by>
+        <sys_created_on>2018-06-13 20:50:50</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a54df3a34f6e9700196cd0af0310c7ff</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>log_phi_data2</sys_name>
+        <sys_package display_value="SCC Second Opinion" source="x_ouhs2_scc_second">c1ba20c64f4a5f007b92d49f0310c78b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SCC Second Opinion">c1ba20c64f4a5f007b92d49f0310c78b</sys_scope>
+        <sys_update_name>sys_script_include_a54df3a34f6e9700196cd0af0310c7ff</sys_update_name>
+        <sys_updated_by>JGIBSON2</sys_updated_by>
+        <sys_updated_on>2018-06-14 17:10:21</sys_updated_on>
+    </sys_script_include>
+</record_update>

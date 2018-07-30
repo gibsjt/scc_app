@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="hearaboutus" table="x_ouhs2_scc_second_opinion" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>hearaboutus</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Referral (medical professional)</label>
+            <language>en</language>
+            <name>x_ouhs2_scc_second_opinion</name>
+            <sequence>0</sequence>
+            <sys_created_by>Monica.Koppelmann</sys_created_by>
+            <sys_created_on>2018-06-01 15:15:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>92b209bf4f5a9f40196cd0af0310c7a6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Monica.Koppelmann</sys_updated_by>
+            <sys_updated_on>2018-06-01 15:15:00</sys_updated_on>
+            <value>referral (medical professional)</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>hearaboutus</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Referral (patient)</label>
+            <language>en</language>
+            <name>x_ouhs2_scc_second_opinion</name>
+            <sequence>1</sequence>
+            <sys_created_by>Monica.Koppelmann</sys_created_by>
+            <sys_created_on>2018-06-01 15:15:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>d2b209bf4f5a9f40196cd0af0310c7a7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Monica.Koppelmann</sys_updated_by>
+            <sys_updated_on>2018-06-01 15:15:00</sys_updated_on>
+            <value>referral (patient)</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>hearaboutus</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>TV spot</label>
+            <language>en</language>
+            <name>x_ouhs2_scc_second_opinion</name>
+            <sequence>2</sequence>
+            <sys_created_by>Monica.Koppelmann</sys_created_by>
+            <sys_created_on>2018-06-01 15:15:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>52b209bf4f5a9f40196cd0af0310c7a8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Monica.Koppelmann</sys_updated_by>
+            <sys_updated_on>2018-06-01 15:15:00</sys_updated_on>
+            <value>tv spot</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>hearaboutus</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Internet</label>
+            <language>en</language>
+            <name>x_ouhs2_scc_second_opinion</name>
+            <sequence>3</sequence>
+            <sys_created_by>Monica.Koppelmann</sys_created_by>
+            <sys_created_on>2018-06-01 15:15:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>deb209bf4f5a9f40196cd0af0310c7a8</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>Monica.Koppelmann</sys_updated_by>
+            <sys_updated_on>2018-06-01 15:19:25</sys_updated_on>
+            <value>on-line</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>hearaboutus</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Other</label>
+            <language>en</language>
+            <name>x_ouhs2_scc_second_opinion</name>
+            <sequence>4</sequence>
+            <sys_created_by>Monica.Koppelmann</sys_created_by>
+            <sys_created_on>2018-06-01 15:19:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>07b309ff4f5a9f40196cd0af0310c716</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>Monica.Koppelmann</sys_updated_by>
+            <sys_updated_on>2018-06-01 15:19:25</sys_updated_on>
+            <value>other</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>hearaboutus</element>
+            <name>x_ouhs2_scc_second_opinion</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>Monica.Koppelmann</sys_created_by>
+            <sys_created_on>2018-06-01 15:15:00</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>9eb209bf4f5a9f40196cd0af0310c7a6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>hearaboutus</sys_name>
+            <sys_package display_value="SCC Second Opinion" source="x_ouhs2_scc_second">c1ba20c64f4a5f007b92d49f0310c78b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="SCC Second Opinion">c1ba20c64f4a5f007b92d49f0310c78b</sys_scope>
+            <sys_update_name>sys_choice_x_ouhs2_scc_second_opinion_hearaboutus</sys_update_name>
+            <sys_updated_by>Monica.Koppelmann</sys_updated_by>
+            <sys_updated_on>2018-06-01 15:15:00</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

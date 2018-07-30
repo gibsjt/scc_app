@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="edge_encryption_enabled=true" audit="true" label="SCC Second Opinion" max_length="40" name="x_ouhs2_scc_second_opinion" type="collection">
+        <element attributes="edge_encryption_enabled=true" audit="true" default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Comments" max_length="4000" name="addl_comments" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" choice="2" label="Have you been advised of a possible out-of-network fee?" max_length="40" name="advised_fee" type="glide_encrypted">
+            <choice>
+                <element label="Yes" sequence="0" value="yes"/>
+                <element label="No" sequence="1" value="no"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Appointment date &amp; time" max_length="40" name="appointment" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Appointment date" max_length="40" name="appt_date" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Assigned to" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Assignment Group" max_length="32" name="assign_group" reference="sys_user_group" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Date of birth" max_length="40" name="birthday" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Cancellation information" max_length="40" name="cancel_info" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Clinic contact" max_length="32" name="clinic_contact" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="What is your primary diagnosis?" max_length="40" name="diagnosis" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Doctor's name" max_length="32" name="doctor" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Email address" max_length="40" name="email" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Gender" max_length="40" name="gender" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" choice="2" label="How did you hear about the Stephenson Cancer Center?" max_length="40" name="hearaboutus" type="glide_encrypted">
+            <choice>
+                <element label="Referral (medical professional)" sequence="0" value="referral (medical professional)"/>
+                <element label="Referral (patient)" sequence="1" value="referral (patient)"/>
+                <element label="TV spot" sequence="2" value="tv spot"/>
+                <element label="Internet" sequence="3" value="on-line"/>
+                <element label="Other" sequence="4" value="other"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" audit="true" choice="2" label="Please provide type of insurance coverage" max_length="32" name="insurance" type="glide_encrypted">
+            <choice>
+                <element label="-- New choice --" value="-- New choice --"/>
+            </choice>
+        </element>
+        <element active="false" attributes="edge_encryption_enabled=true" audit="true" label="Last name" max_length="40" name="last_name" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="How did you hear about the Stephenson Cancer Center?" max_length="40" name="marketing" type="glide_encrypted"/>
+        <element active="false" attributes="edge_encryption_enabled=true" audit="true" label="First name" max_length="40" name="name" type="glide_encrypted"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" comments="&#13;&#10;" label="Are you the patient?" max_length="40" name="patient" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Patient's last name" max_length="40" name="patient_last_name" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Patient's first name" max_length="40" name="patient_name" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" choice="2" label="Do you have the patient's permission to discuss their medical information?" max_length="40" name="patient_permission" type="glide_encrypted">
+            <choice>
+                <element label="No" value="no"/>
+                <element label="Yes" value="yes"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="What is your relationship to the patient?" max_length="40" name="patient_relationship" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Phone number" max_length="40" name="phone" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Phone number" max_length="40" name="phone_number" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Is this a new diagnosis, request for second opinion, or transfer of care?" max_length="40" name="request_type" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" label="Requestor's Email" max_length="40" name="req_email" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Requestor's last name" max_length="40" name="req_last_name" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Requestor's first name" max_length="40" name="req_name" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Requestor's phone number" max_length="40" name="req_phone" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="State" max_length="40" name="state" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" choice="1" label="Ticket state" max_length="40" name="ticket" type="string">
+            <choice>
+                <element label="New" sequence="0" value="new"/>
+                <element label="Assigned" sequence="1" value="assigned"/>
+                <element label="In Progress" sequence="2" value="in progress"/>
+                <element label="Waiting for contact" sequence="3" value="waiting for contact"/>
+                <element label="Pending (sent to clinic)" sequence="4" value="pending"/>
+                <element label="Completed" sequence="5" value="completed"/>
+                <element label="Closed" sequence="6" value="closed"/>
+                <element label="Additional info required" sequence="7" value="additional_info_required"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Appointment time" max_length="40" name="time" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Referring webpage" max_length="40" name="webpage" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" audit="true" label="Zip code" max_length="40" name="zip_code" type="glide_encrypted"/>
+        <index name="index">
+            <element name="assign_group"/>
+        </index>
+        <index name="index2">
+            <element name="doctor"/>
+        </index>
+        <index name="index3">
+            <element name="insurance"/>
+        </index>
+        <index name="index4">
+            <element name="clinic_contact"/>
+        </index>
+        <index name="index5">
+            <element name="assigned_to"/>
+        </index>
+    </element>
+</database>
